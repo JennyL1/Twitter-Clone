@@ -18,11 +18,17 @@ class LoginViewController: UIViewController {
         loginButton.layer.cornerRadius = 15
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if UserDefaults.standard.bool(forKey: "userLoggedIn") == true{
+            self.performSegue(withIdentifier: "loginToHome", sender: self)
+        }
+    }
 
     @IBAction func onTapLogin(_ sender: Any) {
         let urlString = "https://api.twitter.com/oauth/request_token"
         TwitterAPICaller.client?.login(url: urlString, success: {
             //on login success present homeTableVC
+            UserDefaults.standard.set(true, forKey: "userLoggedIn")
             self.performSegue(withIdentifier: "loginToHome", sender: self)
             
         }, failure: { (Error) in
