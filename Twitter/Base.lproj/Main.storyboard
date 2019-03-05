@@ -64,39 +64,37 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dy6-Hw-cL9">
-                                            <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
-                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="65" id="DbH-9q-o26"/>
-                                                <constraint firstAttribute="height" constant="65" id="fwX-j1-UUA"/>
-                                            </constraints>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Doe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQ1-Ig-jyi">
-                                            <rect key="frame" x="73" y="0.0" width="82" height="22"/>
+                                            <rect key="frame" x="77" y="0.0" width="82" height="22"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Tweet Content" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FhF-d4-p1G">
-                                            <rect key="frame" x="73" y="26" width="286" height="83"/>
+                                            <rect key="frame" x="77" y="26" width="282" height="83"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dy6-Hw-cL9">
+                                            <rect key="frame" x="4" y="4" width="65" height="65"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="65" id="DbH-9q-o26"/>
+                                                <constraint firstAttribute="height" constant="65" id="fwX-j1-UUA"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="Dy6-Hw-cL9" firstAttribute="leading" secondItem="zQc-KE-0Rs" secondAttribute="leading" constant="4" id="4kf-V7-GNY"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="FhF-d4-p1G" secondAttribute="trailing" id="CN9-KX-2Qr"/>
                                         <constraint firstItem="WQ1-Ig-jyi" firstAttribute="top" secondItem="zQc-KE-0Rs" secondAttribute="top" id="GwC-Uk-wGy"/>
                                         <constraint firstItem="FhF-d4-p1G" firstAttribute="top" secondItem="WQ1-Ig-jyi" secondAttribute="bottom" constant="4" id="Jmm-1k-EBQ"/>
                                         <constraint firstItem="WQ1-Ig-jyi" firstAttribute="leading" secondItem="Dy6-Hw-cL9" secondAttribute="trailing" constant="8" id="Ond-LF-Hsg"/>
-                                        <constraint firstItem="Dy6-Hw-cL9" firstAttribute="top" secondItem="zQc-KE-0Rs" secondAttribute="top" id="UYV-Fu-wh8"/>
-                                        <constraint firstItem="Dy6-Hw-cL9" firstAttribute="leading" secondItem="zQc-KE-0Rs" secondAttribute="leading" id="X13-TU-FHC"/>
+                                        <constraint firstItem="Dy6-Hw-cL9" firstAttribute="top" secondItem="zQc-KE-0Rs" secondAttribute="top" constant="4" id="YUO-Gx-Bvq"/>
                                         <constraint firstItem="FhF-d4-p1G" firstAttribute="leading" secondItem="Dy6-Hw-cL9" secondAttribute="trailing" constant="8" id="olQ-Qo-Nlm"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="FhF-d4-p1G" secondAttribute="bottom" id="xK4-cc-b1g"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="profileImage" destination="Dy6-Hw-cL9" id="yGS-QU-Ueq"/>
                                     <outlet property="tweetContent" destination="FhF-d4-p1G" id="T93-uZ-igg"/>
