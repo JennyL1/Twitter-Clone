@@ -34,7 +34,7 @@ Time spent: **8** hours spent in total
 
 The following **required** functionality is completed:
 
-- [X ] User sees app icon in home screen and styled launch screen. (1pt)
+- [X] User sees app icon in home screen and styled launch screen. (1pt)
 - [X] User can log in. (1pt)
 - [X] User can log out. (1pt)
 - [X] User stays logged in across restarts. (1pt)
