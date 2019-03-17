@@ -87,6 +87,11 @@ class HomeTableViewController: UITableViewController {
         cell.userNameLabel.text = user["name"] as? String
         cell.tweetContent.text = tweetArray[indexPath.row]["text"] as? String
         
+        let tweetTime = tweetArray[indexPath.row]["created_at"] as? String
+        let time = parseTimestampString(timestamp: tweetTime!)
+        
+        cell.timestampLabel.text = "\(time)"
+        
         let imageUrl = URL(string: (user["profile_image_url_https"] as! String))
         let data = try? Data(contentsOf: imageUrl!)
         
@@ -109,5 +114,21 @@ class HomeTableViewController: UITableViewController {
         return tweetArray.count
     }
     
+    func parseTimestampString(timestamp: String) -> String {
+        let formatter = DateFormatter()
+        
+        // Configure the input format to parse the date string
+        formatter.dateFormat = "E MMM d HH:mm:ss Z y"
+        
+        // Convert String to Date
+        let date = formatter.date(from: timestamp)
+        
+        // Configure output format
+        formatter.dateStyle = .short
+        formatter.timeStyle = .short
+        
+        // Convert Date to String
+        return formatter.string(from: date!)
+    }
 
 }

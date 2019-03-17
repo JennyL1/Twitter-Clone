@@ -105,11 +105,19 @@
                                                 <action selector="retweet:" destination="W7J-z5-DRZ" eventType="touchUpInside" id="HSi-XE-KkT"/>
                                             </connections>
                                         </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="timestamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GHx-Hz-brf" userLabel="timestampLabel">
+                                            <rect key="frame" x="300.5" y="8" width="64.5" height="22"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottomMargin" secondItem="Uiv-K7-jSK" secondAttribute="bottom" constant="10" id="2Dy-u8-Gwt"/>
                                         <constraint firstItem="Uiv-K7-jSK" firstAttribute="top" secondItem="FhF-d4-p1G" secondAttribute="bottom" constant="10" id="3CP-DX-Yvi"/>
+                                        <constraint firstItem="GHx-Hz-brf" firstAttribute="top" secondItem="zQc-KE-0Rs" secondAttribute="top" constant="8" id="47K-qb-jeL"/>
                                         <constraint firstItem="Dy6-Hw-cL9" firstAttribute="leading" secondItem="zQc-KE-0Rs" secondAttribute="leading" constant="8" id="4kf-V7-GNY"/>
+                                        <constraint firstItem="FhF-d4-p1G" firstAttribute="top" secondItem="GHx-Hz-brf" secondAttribute="bottom" constant="4" id="8Yx-Nh-2wA"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="FhF-d4-p1G" secondAttribute="trailing" id="CN9-KX-2Qr"/>
                                         <constraint firstItem="WQ1-Ig-jyi" firstAttribute="top" secondItem="zQc-KE-0Rs" secondAttribute="top" constant="8" id="GwC-Uk-wGy"/>
                                         <constraint firstItem="FhF-d4-p1G" firstAttribute="top" secondItem="WQ1-Ig-jyi" secondAttribute="bottom" constant="4" id="Jmm-1k-EBQ"/>
@@ -119,12 +127,14 @@
                                         <constraint firstItem="Uiv-K7-jSK" firstAttribute="leading" secondItem="bfL-LE-Nxf" secondAttribute="trailing" constant="10" id="YVc-1E-Fga"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="bfL-LE-Nxf" secondAttribute="bottom" constant="10" id="dwj-JD-nI2"/>
                                         <constraint firstItem="FhF-d4-p1G" firstAttribute="leading" secondItem="Dy6-Hw-cL9" secondAttribute="trailing" constant="8" id="olQ-Qo-Nlm"/>
+                                        <constraint firstAttribute="trailing" secondItem="GHx-Hz-brf" secondAttribute="trailing" constant="10" id="r4E-KI-ozD"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="favButton" destination="Uiv-K7-jSK" id="08f-hy-aHL"/>
                                     <outlet property="profileImage" destination="Dy6-Hw-cL9" id="yGS-QU-Ueq"/>
                                     <outlet property="retweetButton" destination="bfL-LE-Nxf" id="fl8-2B-EnJ"/>
+                                    <outlet property="timestampLabel" destination="GHx-Hz-brf" id="x2c-jS-pOu"/>
                                     <outlet property="tweetContent" destination="FhF-d4-p1G" id="T93-uZ-igg"/>
                                     <outlet property="userNameLabel" destination="WQ1-Ig-jyi" id="1he-FO-ia8"/>
                                 </connections>
@@ -171,11 +181,22 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIf-4w-qD9" userLabel="letterCountLabel">
+                                <rect key="frame" x="305" y="202" width="60" height="0.0"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="4zp-tK-ej6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="dIf-4w-qD9" firstAttribute="top" secondItem="ejr-EM-5qa" secondAttribute="bottom" constant="10" id="3CD-D2-8ce"/>
                             <constraint firstItem="ejr-EM-5qa" firstAttribute="leading" secondItem="rks-O1-MuU" secondAttribute="leading" id="BH7-lh-tFH"/>
                             <constraint firstItem="ejr-EM-5qa" firstAttribute="top" secondItem="rks-O1-MuU" secondAttribute="top" id="XgA-jO-Xpm"/>
+                            <constraint firstItem="rks-O1-MuU" firstAttribute="trailing" secondItem="dIf-4w-qD9" secondAttribute="trailing" constant="10" id="ge2-PG-wyF"/>
                             <constraint firstItem="rks-O1-MuU" firstAttribute="trailing" secondItem="ejr-EM-5qa" secondAttribute="trailing" id="zbc-4D-OEm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rks-O1-MuU"/>
@@ -195,6 +216,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="letterCountLabel" destination="dIf-4w-qD9" id="GYH-9a-WKe"/>
                         <outlet property="tweetTextView" destination="ejr-EM-5qa" id="HXa-7i-e9w"/>
                     </connections>
                 </viewController>
